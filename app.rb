@@ -22,30 +22,25 @@ end
 
 get("/paper") do
   comp_options = ["rock","paper","scissors"]
-  comp_move = comp_options.sample
-  if comp_move == "rock"
-    outcome = "won"
-  elsif comp_move == "paper"
-    outcome = "tied"
-  else outcome = "lost"
+  @comp_move = comp_options.sample
+  if @comp_move == "rock"
+    @outcome = "won"
+  elsif @comp_move == "paper"
+    @outcome = "tied"
+  else @outcome = "lost"
   end
-  "  <h2>We played paper! </h2>
-  <h2> They played #{comp_move}! </h2>
-  <h2> We #{outcome} </h2>
-  "
+  erb (:giraffe)
+  
 end
 
 get("/scissors") do
   comp_options = ["rock","paper","scissors"]
-  comp_move = comp_options.sample
-  if comp_move == "rock"
-    outcome = "lost"
-  elsif comp_move == "paper"
-    outcome = "won"
-  else outcome = "tied"
+  @comp_move = comp_options.sample
+  if @comp_move == "rock"
+    @outcome = "lost"
+  elsif @comp_move == "paper"
+    @outcome = "won"
+  else @outcome = "tied"
   end
-  "  <h2>We played scissors! </h2>
-  <h2> They played #{comp_move}! </h2>
-  <h2> We #{outcome} </h2>
-  "
+  erb(:elephant)
 end
